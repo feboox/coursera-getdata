@@ -5,7 +5,7 @@ This code contains the data for the project course of the course located at http
 
 ## How to run this code
 This code can be run by sourcing the code and typing the run_analysis() command.
-###gotchas
+### Gotchas
 - You need to load the Samsung data in the folder yourself. Due to some bandwith limitation I could not load all the data by myself.
 - You need to do a setwd to the source file directory before running the run_analysis() command.
 - In case it's not present you need to install the "reshape2" library before running the script.
@@ -13,7 +13,7 @@ This code can be run by sourcing the code and typing the run_analysis() command.
 # Explanation
 The function run_analysis performs the following tasks:
 
-## function definitions
+## Function definitions
 At first we define some functions for internal usage. An example is the function to retrieve a the label of an activity given and index:
 ```{r}
         find_label <- function(activity_index) {
@@ -21,7 +21,7 @@ At first we define some functions for internal usage. An example is the function
         }
 ```
 
-## data loading
+## Data loading
 Then we load the data we are going to use to perform the analysis:
 ```{r}
         train_dir <- "UCI HAR Dataset/train/"
@@ -42,7 +42,7 @@ Then we load the data we are going to use to perform the analysis:
         Y_test <- read.table(Y_test_file)
 ```
 
-## metadata loading
+## Metadata loading
 Then we load the metadata (labels for the features/measurements and the activicties):
 ```{r}
         activity_labels <- read.table("~/software/getdata/project/UCI HAR Dataset/activity_labels.txt")
@@ -51,7 +51,7 @@ Then we load the metadata (labels for the features/measurements and the activict
         features_labels <- features_labels$V2
 ```
 
-##data merging (point 1)
+## Data merging (point 1)
 Then we merge the train data with the test data:
 ```{r}
         X <- rbind(X_train, X_test)
@@ -61,7 +61,7 @@ Then we merge the train data with the test data:
 ```
 We merge the data together. The subject comes first, then the measurements, then the activities.
 
-##data extraction (point 2)
+## Data extraction (point 2)
 We extract only the interesting data (mean and std measurements):
 ```{r}
         useful_data_indexes <- grepl("mean()", features_labels, fixed=TRUE) | grepl("std()", features_labels, fixed=TRUE)
