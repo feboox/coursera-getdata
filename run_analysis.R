@@ -1,4 +1,6 @@
 run_analysis <- function() {
+        library("reshape2")
+        
         #internal functions
         find_label <- function(activity_index) {
                 as.vector(activity_labels[which(activity_labels$index == activity_index), "label"])
