@@ -7,7 +7,7 @@ The dataset is obtained from the Samsung dataset that can be found at https://d3
 
 The Samsung dataset is a dataset made out of data collected with wearable technologies used by 30 random subject while performing some everyday activities. The goal of the data is mainly to investigate some correlation between these data and the activities.
 
-The tiny dataset is the result of the run_analysis script and groups the raw data in a different way.
+The tidy dataset is the result of the run_analysis script and groups the raw data in a different way.
 
 As specified by the project instructions the tidy dataset the goal is to create a "tidy data set with the average of each variable for each activity and each subject."
 
