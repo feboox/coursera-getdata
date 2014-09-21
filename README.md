@@ -86,17 +86,17 @@ We use the activity names instead of their indexes:
         names(useful_data) <- labels
 ```
 
-##Tiny dataset creation (point 5)
-The tiny dataset is created with some reshaping:
+##Tidy dataset creation (point 5)
+The tidy dataset is created with some reshaping:
 ```{r}
         tidy_tmp <- melt(d, id=c("subject", "activity"), measure.vars = useful_features_labels)
         tidy_dataset <- dcast(tidy_tmp, subject + activity ~ variable, mean)
 ```
 
 ##Output
-A file tyny_dataset.txt is created with the result:
+A file tydy_dataset.txt is created with the result:
 ```{r}
         write.table(tidy_dataset, "tidy_dataset.txt", row.names = FALSE)
 ```
 
-The tiny dataset format is explained in the file codebook.md
+The tidy dataset format is explained in the file codebook.md
